@@ -4,9 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-scripts": "5.0.1",
@@ -16,7 +13,16 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:unit": "react-scripts test tests/unit --watchAll=false",
+    "test:integration": "react-scripts test tests/integration --watchAll=false",
+    "test:login": "react-scripts test tests/unit/Login.test.js --watchAll=false",
+    "test:e2e": "playwright test",
+    "test:app": "react-scripts test src/tests/unit/App.test.js --watchAll=false",
+    "test:todoitem": "react-scripts test src/tests/unit/TodoItem.test.js --watchAll=false",
+    "test:todolist": "react-scripts test src/tests/unit/TodoList.test.js --watchAll=false",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "playwright:watch": "playwright test --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +41,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.10.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "jest-environment-jsdom": "^30.2.0"
   }
 }
