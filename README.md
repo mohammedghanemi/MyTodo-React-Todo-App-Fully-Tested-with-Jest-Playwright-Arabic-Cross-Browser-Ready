@@ -142,18 +142,21 @@
 ## 🛠️ Test Configuration & Setup
 
 **Test File Structure**
+```
   src/tests/
-├── unit/ # Jest Unit Tests (21 tests)
-│ ├── Login.test.js # Authentication component
-│ ├── TodoItem.test.js # Individual todo item
-│ ├── TodoList.test.js # Todo list management
-│ └── App.test.js # Main application
-├── integration/ # Jest Integration Tests (2 tests)
-│ └── app-integration.test.js # Cross-component workflows
-└── e2e/ # Playwright E2E Tests (13 tests)
-├── auth.spec.js # Authentication flows
-├── todo-crud.spec.js # CRUD operations
-└── todo-workflow.spec.js # Complete user journey
+├── unit/ # Jest Unit Tests (21 tests).␣␣
+│ ├── Login.test.js # Authentication component.
+│ ├── TodoItem.test.js # Individual todo item.
+│ ├── TodoList.test.js # Todo list management.
+│ └── App.test.js # Main application.
+├── integration/ # Jest Integration Tests (2 tests).
+│ └── app-integration.test.js # Cross-component workflows.
+└── e2e/ # Playwright E2E Tests (13 tests).
+├── auth.spec.js # Authentication flows.
+├── todo-crud.spec.js # CRUD operations.
+└── todo-workflow.spec.js # Complete user journey.
+```
+
 ### 📂 Details:
 
 - **unit/**  
