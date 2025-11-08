@@ -186,13 +186,12 @@
 ```bash
 # Run all unit tests
 npm run test:unit
-
 # Run integration tests
 npm run test:integration
-
 # Run E2E tests (Chromium)
 npx playwright test --project=chromium
 
+```
 ## ⚙️ Test Configuration Files
 
 - **Jest Config:** Custom configuration for test matching and coverage  
@@ -228,8 +227,6 @@ npx playwright test --project=chromium
 | Browser   | Unit Tests | Integration Tests | E2E Tests  | Status           |
 |-----------|------------|-----------------|------------|----------------|
 | Chromium  | ✅ 21/21   | ✅ 2/2           | ✅ 13/13   | FULLY SUPPORTED |
-| Firefox   | ✅ 21/21   | ✅ 2/2           | 🔄 Installing | In Progress      |
-| Webkit    | ✅ 21/21   | ✅ 2/2           | 🔄 Installing | In Progress      |
 
 ---
 
