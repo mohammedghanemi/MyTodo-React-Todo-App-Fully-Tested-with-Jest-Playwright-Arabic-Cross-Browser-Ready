@@ -22,7 +22,13 @@
     "test:todoitem": "react-scripts test src/tests/unit/TodoItem.test.js --watchAll=false",
     "test:todolist": "react-scripts test src/tests/unit/TodoList.test.js --watchAll=false",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
-    "playwright:watch": "playwright test --watch"
+    "playwright:watch": "playwright test --watch",
+    "test:e2e:report": "playwright test --reporter=html,json,junit",
+    "test:e2e:video": "playwright test --video=on",
+    "test:e2e:screenshot": "playwright test --screenshot=on",
+    "report:show": "playwright show-report",
+    "test:all": "npm run test:e2e:report"
+
   },
   "eslintConfig": {
     "extends": [

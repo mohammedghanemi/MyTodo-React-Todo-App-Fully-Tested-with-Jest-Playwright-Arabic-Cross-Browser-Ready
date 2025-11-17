@@ -1,0 +1,111 @@
+.test-dashboard {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+}
+
+.dashboard-header h1 {
+  margin: 0 0 10px 0;
+}
+
+.dashboard-header p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.dashboard-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.control-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.run-tests-btn {
+  background: #28a745;
+  color: white;
+}
+
+.run-tests-btn:hover {
+  background: #218838;
+}
+
+.clear-results-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.clear-results-btn:hover {
+  background: #c82333;
+}
+
+.test-summary {
+  margin-bottom: 30px;
+}
+
+.test-summary h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.summary-card {
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.summary-card.total {
+  background: #007bff;
+}
+
+.summary-card.passed {
+  background: #28a745;
+}
+
+.summary-card.failed {
+  background: #dc3545;
+}
+
+.summary-card.duration {
+  background: #ffc107;
+  color: #333;
+}
+
+.card-value {
+  font-size: 2em;
+  margin: 10px 0 0 0;
+  font-weight: bold;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1em;
+  opacity: 0.9;
+}

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import TodoList from './components/TodoList';
 import Login from './components/Login';
+import TestResultsDashboard from './components/TestResultsDashboard';
 import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
+  const [showTestDashboard, setShowTestDashboard] = useState(false);
 
   useEffect(() => {
     // تحميل البيانات من localStorage
@@ -32,6 +34,7 @@ function App() {
   const handleLogout = () => {
     setUser(null);
     setIsLoggedIn(false);
+    setShowTestDashboard(false);
     localStorage.removeItem('user');
   };
 
@@ -69,6 +72,10 @@ function App() {
     localStorage.setItem('todos', JSON.stringify(updatedTodos));
   };
 
+  const toggleTestDashboard = () => {
+    setShowTestDashboard(!showTestDashboard);
+  };
+
   return (
     <div className="App">
       <header className="app-header">
@@ -76,9 +83,14 @@ function App() {
         {isLoggedIn && (
           <div className="user-info">
             <span>مرحباً، {user?.username}</span>
-            <button onClick={handleLogout} className="logout-btn">
-              تسجيل الخروج
-            </button>
+            <div className="header-buttons">
+              <button onClick={toggleTestDashboard} className="test-dashboard-btn">
+                {showTestDashboard ? 'إخفاء لوحة الاختبار' : 'لوحة الاختبار'} 🧪
+              </button>
+              <button onClick={handleLogout} className="logout-btn">
+                تسجيل الخروج
+              </button>
+            </div>
           </div>
         )}
       </header>
@@ -87,15 +99,34 @@ function App() {
         {!isLoggedIn ? (
           <Login onLogin={handleLogin} />
         ) : (
-          <TodoList
-            todos={todos}
-            onAddTodo={addTodo}
-            onEditTodo={editTodo}
-            onDeleteTodo={deleteTodo}
-            onToggleTodo={toggleTodo}
-          />
+          <>
+            {showTestDashboard ? (
+              <TestResultsDashboard />
+            ) : (
+              <TodoList
+                todos={todos}
+                onAddTodo={addTodo}
+                onEditTodo={editTodo}
+                onDeleteTodo={deleteTodo}
+                onToggleTodo={toggleTodo}
+              />
+            )}
+          </>
         )}
       </main>
+
+      {/* Developer footer with quick test access */}
+      {process.env.NODE_ENV === 'development' && isLoggedIn && !showTestDashboard && (
+        <footer className="dev-footer">
+          <button 
+            onClick={toggleTestDashboard}
+            className="dev-test-btn"
+            title="Quick access to test dashboard"
+          >
+            🧪 Test Mode
+          </button>
+        </footer>
+      )}
     </div>
   );
 }
